@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapActivity">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toTopOf="@id/container"
+        android:layout_height="match_parent"
+        tools:context=".MapsActivity" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/sheet_background"
+        android:id="@+id/container"
+        android:padding="@dimen/dimen_16_dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/sheet_title"
+            android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:text="@string/title_location_sheet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/sheet_location"
+            android:layout_width="@dimen/dimen_0_dp"
+            android:background="@drawable/sheet_location_background"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:text="@string/title_location_sheet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sheet_title"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

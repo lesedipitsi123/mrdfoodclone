@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sky_blue"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="@dimen/dimen_54_dp"
+        android:layout_height="@dimen/dimen_54_dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:src="@mipmap/baseline_menu_black_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/mrdCloneIcon"
+        android:layout_width="@dimen/dimen_96_dp"
+        android:layout_height="@dimen/dimen_96_dp"
+        android:src="@mipmap/mrd_clone_app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+
+    <TextView
+        android:id="@+id/CloneTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/sample_clone_title"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mrdCloneIcon" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/deliver"
+        android:layout_width="@dimen/dimen_0_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_16_dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="@dimen/dimen_8_dp"
+        app:cardBackgroundColor="@color/material_yellow_500"
+        app:cardCornerRadius="@dimen/dimen_10_dp"
+        app:contentPadding="@dimen/dimen_16_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@mipmap/outline_place_black_24"
+            android:drawablePadding="@dimen/dimen_16_dp"
+            android:text="@string/sample_button_order"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/rich_black"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signUp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="@dimen/dimen_0_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_16_dp"
+        android:text="@string/sample_signup"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/rich_black"
+        app:cornerRadius="@dimen/dimen_8_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/logIn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deliver"
+        app:layout_constraintVertical_bias="0.1"
+        app:strokeColor="@color/black" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logIn"
+        android:layout_width="@dimen/dimen_0_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dimen_16_dp"
+        android:text="@string/sample_login"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/rich_black"
+        app:cornerRadius="@dimen/dimen_8_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/signUp"
+        app:layout_constraintTop_toBottomOf="@id/deliver"
+        app:layout_constraintVertical_bias="0.1"
+        app:strokeColor="@color/black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
