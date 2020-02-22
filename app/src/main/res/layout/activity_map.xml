@@ -6,23 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MapActivity">
 
-    <FrameLayout
-        android:id="@+id/mapWrapper"
-        android:layout_width="0dp"
+    <fragment
+        android:id="@+id/map"
+        android:name="apps.studios.bt.mrdfoodclone.views.DraggableMap"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <fragment
-            android:id="@+id/map"
-            android:name="apps.studios.bt.mrdfoodclone.views.DraggableMap"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".MapsActivity" />
-
-    </FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".MapsActivity" />
 
     <ImageView
         android:id="@+id/map_pointer"
@@ -30,10 +23,10 @@
         android:layout_height="@dimen/dimen_48_dp"
         android:contentDescription="@null"
         android:src="@mipmap/ic_map_pointer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/map"
+        app:layout_constraintEnd_toEndOf="@id/map"
+        app:layout_constraintStart_toStartOf="@id/map"
+        app:layout_constraintTop_toTopOf="@id/map" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
@@ -67,6 +60,8 @@
             android:drawableStart="@mipmap/outline_place_black_24"
             android:drawablePadding="@dimen/dimen_16_dp"
             android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
             android:paddingStart="@dimen/dimen_16_dp"
             android:paddingEnd="@dimen/dimen_16_dp"
             android:text="@string/sample_location"
