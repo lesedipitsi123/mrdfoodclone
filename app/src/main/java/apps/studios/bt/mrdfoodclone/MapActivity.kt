@@ -23,7 +23,6 @@ import kotlinx.android.synthetic.main.activity_map.*
 import java.io.IOException
 import java.util.*
 
-
 class MapActivity : AppCompatActivity(), OnMapReadyCallback, MapWrapper.OnDragListener {
 
     private lateinit var locationTextView: TextView
@@ -42,9 +41,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, MapWrapper.OnDragLi
 
     private fun initComponents() {
         fusedLocation = LocationServices.getFusedLocationProviderClient(this)
-        fusedLocation.lastLocation.addOnSuccessListener {
-            lastLocation = it
-        }
         locationTextView = sheet_location
         coord_marker_x = map_pointer?.x!!.toInt()
         coord_marker_y = map_pointer?.bottom!!.plus(map_pointer?.width!!.div(2))
@@ -53,6 +49,16 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, MapWrapper.OnDragLi
         googleMapFragment.getMapAsync(this)
         googleMapFragment.setOnMapDragListener(this)
 
+        fusedLocation.lastLocation.addOnSuccessListener {
+            lastLocation = it
+            googleMap?.moveCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                    LatLng(lastLocation?.latitude!!, lastLocation?.longitude!!),
+                    17f
+                )
+
+            )
+        }
 
     }
 
@@ -65,22 +71,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, MapWrapper.OnDragLi
 
         googleMap?.uiSettings!!.isMyLocationButtonEnabled = false
         googleMap?.setMaxZoomPreference(18f)
-        if (lastLocation != null) {
-            googleMap?.moveCamera(
-                CameraUpdateFactory.newLatLngZoom(
-                    LatLng(lastLocation?.latitude!!, lastLocation?.longitude!!),
-                    17f
-                )
-
-            )
-        } else {
+        if (lastLocation == null) {
             googleMap?.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
                     LatLng(-34.2788339, 18.2493811), 17f
                 )
             )
         }
-// LatLng(-34.2788339, 18.2493811), 17f)
     }
 
     override fun onMapDrag(motionEvent: MotionEvent?) {
