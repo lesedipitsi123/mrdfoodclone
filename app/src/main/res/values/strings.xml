@@ -87,6 +87,10 @@
     <string name="sample_signup">Sign Up</string>
     <string name="sample_login">Log In</string>
     <string name="sample_clone_title">MrD Clone</string>
-    <string name="title_location_sheet">Select location</string>
+    <string name="title_location_sheet">Select Location</string>
+    <string name="sample_location">Location</string>
+    <string name="sample_save_location">Save Location</string>
+    <string name="loading">Loading…</string>
+    <string name="google_maps_error">\"Unable to resolve location.\\nCheck your network connection and try again.\"</string>
 
 </resources>

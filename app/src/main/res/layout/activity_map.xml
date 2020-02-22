@@ -6,47 +6,102 @@
     android:layout_height="match_parent"
     tools:context=".MapActivity">
 
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="match_parent"
-        app:layout_constraintBottom_toTopOf="@id/container"
-        android:layout_height="match_parent"
-        tools:context=".MapsActivity" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
+        android:id="@+id/mapWrapper"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/sheet_background"
-        android:id="@+id/container"
-        android:padding="@dimen/dimen_16_dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="apps.studios.bt.mrdfoodclone.views.DraggableMap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MapsActivity" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/map_pointer"
+        android:layout_width="@dimen/dimen_48_dp"
+        android:layout_height="@dimen/dimen_48_dp"
+        android:contentDescription="@null"
+        android:src="@mipmap/ic_map_pointer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/sheet_background"
+        android:padding="@dimen/dimen_24_dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <TextView
             android:id="@+id/sheet_title"
             android:layout_width="@dimen/dimen_0_dp"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:text="@string/title_location_sheet"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/sheet_location"
             android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:layout_marginTop="@dimen/dimen_24_dp"
+            android:layout_marginBottom="@dimen/dimen_16_dp"
             android:background="@drawable/sheet_location_background"
-            android:layout_height="wrap_content"
+            android:drawableStart="@mipmap/outline_place_black_24"
+            android:drawablePadding="@dimen/dimen_16_dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/dimen_16_dp"
+            android:paddingEnd="@dimen/dimen_16_dp"
+            android:text="@string/sample_location"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/material_grey_900"
             android:textStyle="normal"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:text="@string/title_location_sheet"
+            app:layout_constraintBottom_toTopOf="@id/btnSaveLocation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sheet_title"/>
+            app:layout_constraintTop_toBottomOf="@id/sheet_title" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnSaveLocation"
+            android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/dimen_8_dp"
+            app:cardBackgroundColor="@color/material_yellow_500"
+            app:cardCornerRadius="@dimen/dimen_10_dp"
+            app:contentPadding="@dimen/dimen_16_dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sheet_location">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sample_save_location"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/rich_black"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

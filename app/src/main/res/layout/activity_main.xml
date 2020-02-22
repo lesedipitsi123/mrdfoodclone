@@ -12,8 +12,20 @@
         android:layout_width="@dimen/dimen_54_dp"
         android:layout_height="@dimen/dimen_54_dp"
         android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="@null"
         android:src="@mipmap/baseline_menu_black_24"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageButton
+        android:id="@+id/btnGithub"
+        android:layout_width="@dimen/dimen_54_dp"
+        android:layout_height="@dimen/dimen_54_dp"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="@null"
+        android:src="@mipmap/ic_github"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
@@ -69,7 +81,6 @@
             android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signUp"
