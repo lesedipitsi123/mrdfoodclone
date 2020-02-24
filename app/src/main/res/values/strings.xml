@@ -89,8 +89,24 @@
     <string name="sample_clone_title">Mr. D Food Clone</string>
     <string name="title_location_sheet">Select Location</string>
     <string name="sample_location">Location</string>
-    <string name="sample_save_location">Save Location</string>
+    <string name="sample_save_location">Use this location</string>
     <string name="loading">Loading…</string>
     <string name="google_maps_error">"Unable to resolve location.\nCheck your network connection and try again."</string>
+    <string name="sample_address">Address</string>
+    <string name="change_location">Change Location</string>
+    <string name="sample_promotion">GET a free burger</string>
+    <string name="sample_promotion_description">Simply follow me on my github :)</string>
+    <string name="sponsor">Sponsor</string>
+    <string name="sample_restaurants">Restaurants</string>
+    <string name="sample_restaurants_tags">Asian, Italian, Mexican, Pizza</string>
+    <string name="sample_restaurants_rating">4.4 (500) \u2022 800m away</string>
+    <string name="sample_filters">Filter By</string>
+    <string name="offer">Offer</string>
+    <string name="sample_restaurant1">Wimpy</string>
+    <string name="sample_restaurant_tag1">Burger</string>
+    <string name="sample_restaurant2">KFC</string>
+    <string name="sample_restaurant_tag2">Chicken, Burger, Chips</string>
+    <string name="sample_restaurant_tag3">Asian, Noodles</string>
+    <string name="sample_restaurant3">Sushi Bar</string>
 
 </resources>

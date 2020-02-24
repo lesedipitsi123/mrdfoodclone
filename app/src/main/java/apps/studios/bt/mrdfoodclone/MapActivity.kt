@@ -1,5 +1,6 @@
 package apps.studios.bt.mrdfoodclone
 
+import android.content.Intent
 import android.graphics.Point
 import android.location.Address
 import android.location.Geocoder
@@ -8,6 +9,7 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.os.Looper
 import android.view.MotionEvent
+import android.view.animation.BounceInterpolator
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -42,8 +44,9 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, MapWrapper.OnDragLi
     private fun initComponents() {
         fusedLocation = LocationServices.getFusedLocationProviderClient(this)
         locationTextView = sheet_location
-        coord_marker_x = map_pointer?.x!!.toInt()
-        coord_marker_y = map_pointer?.bottom!!.plus(map_pointer?.width!!.div(2))
+        coord_marker_x = Math.round(map_pointer.x)
+        coord_marker_y =
+            Math.round(map_pointer.y).plus(map_pointer.width / 2).plus(map_pointer.height)
 
         googleMapFragment = supportFragmentManager.findFragmentById(R.id.map) as DraggableMap
         googleMapFragment.getMapAsync(this)
@@ -60,6 +63,17 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, MapWrapper.OnDragLi
             )
         }
 
+        btnSaveLocation.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            if(locationTextView.text.trim().isNotEmpty())
+            {
+                intent.putExtra("Address", locationTextView.text.trim().toString())
+            }
+            startActivity(intent)
+            finish()
+        }
+        btnBack.setOnClickListener { finish() }
+
     }
 
     private fun updateLocation(coords: LatLng) {
@@ -70,22 +84,37 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, MapWrapper.OnDragLi
         googleMap = map
 
         googleMap?.uiSettings!!.isMyLocationButtonEnabled = false
+        googleMap?.uiSettings!!.isScrollGesturesEnabledDuringRotateOrZoom = false
+        googleMap?.uiSettings!!.isRotateGesturesEnabled = false
         googleMap?.setMaxZoomPreference(18f)
         if (lastLocation == null) {
             googleMap?.moveCamera(
                 CameraUpdateFactory.newLatLngZoom(
-                    LatLng(-34.2788339, 18.2493811), 17f
+                    LatLng(-26.195246, 28.034088),
+                    16f
                 )
+
             )
         }
+
+
     }
 
     override fun onMapDrag(motionEvent: MotionEvent?) {
         locationTextView.text = getString(R.string.loading)
-        //   map_pointer?.animate()!!.translationY(1f).start()
+        // map_pointer?.isEnabled = true
+        map_pointer?.animate()!!.translationY(-24f).setDuration(200).start()
     }
 
     override fun onMapRelease(action_release: Int?) {
+        map_pointer?.animate()!!.translationY(0f)
+            .setInterpolator(BounceInterpolator())
+            .setDuration(420).start()
+
+        coord_marker_x = Math.round(map_pointer.x)
+        coord_marker_y =
+            Math.round(map_pointer.y).plus(map_pointer.width / 2).plus(map_pointer.height)
+
         updateLocation(
             googleMap?.projection!!.fromScreenLocation(
                 Point(
@@ -124,10 +153,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, MapWrapper.OnDragLi
                         val obj: Address = addressList[0]
 
                         completerAddress.append(
-                            obj.getAddressLine(0).substring(
-                                0,
-                                obj.getAddressLine(0).indexOf(',')
-                            )
+                            obj.getAddressLine(0).split(',')[0]
                         )
                             .append(", ").append(obj.countryName)
 

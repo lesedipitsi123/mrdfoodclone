@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_16_dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackgroundBorderless"
+    android:orientation="vertical"
+    android:stateListAnimator="@animator/lift_on_touch"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/dimen_14_dp"
+    app:cardElevation="3dp"
+    app:cardPreventCornerOverlap="false"
+    app:contentPaddingBottom="@dimen/dimen_16_dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/cover_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/nav_header_height_2"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/clothestwo"
+            app:layout_constraintBottom_toTopOf="@id/avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/restaurant_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/sample_restaurants"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textColor="@color/rich_black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/restaurant_tags"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/avatar"
+            app:layout_constraintTop_toTopOf="@id/avatar"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/restaurant_tags"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/lato_regular"
+            android:maxLines="2"
+            android:text="@string/sample_restaurants_tags"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/material_grey_500"
+            app:layout_constraintBottom_toBottomOf="@id/avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/avatar"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_name"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/dimen_48_dp"
+            android:layout_height="@dimen/dimen_48_dp"
+            android:layout_margin="@dimen/dimen_16_dp"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_avatar_empty"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cover_img" />
+
+        <ImageView
+            android:id="@+id/icRating"
+            android:layout_width="@dimen/dimen_18_dp"
+            android:layout_height="@dimen/dimen_18_dp"
+            android:layout_margin="@dimen/dimen_16_dp"
+            android:contentDescription="@null"
+            android:src="@mipmap/outline_star_black_24"
+            android:tint="@color/material_green_700"
+            app:layout_constraintBottom_toBottomOf="@id/restaurant_rating"
+            app:layout_constraintStart_toEndOf="@id/avatar"
+            app:layout_constraintTop_toTopOf="@id/restaurant_rating" />
+
+        <TextView
+            android:id="@+id/restaurant_rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/sample_restaurants_rating"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/material_green_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/icRating"
+            app:layout_constraintTop_toBottomOf="@id/restaurant_tags" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

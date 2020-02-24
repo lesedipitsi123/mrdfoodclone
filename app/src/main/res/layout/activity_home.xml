@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:fillViewport="true"
+    tools:context=".HomeActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/locationContainer"
+            android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/dimen_8_dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="@dimen/dimen_0_dp"
+            app:contentPadding="@dimen/dimen_24_dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/deliver"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/action_bar_size"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/dimen_10_dp"
+                app:cardElevation="@dimen/dimen_0_dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:drawableStart="@mipmap/outline_place_black_24"
+                        android:drawablePadding="@dimen/dimen_8_dp"
+                        android:gravity="center_vertical|start"
+                        android:paddingStart="@dimen/dimen_8_dp"
+                        android:paddingEnd="@dimen/dimen_8_dp"
+                        android:text="@string/sample_address"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                        android:textColor="@color/material_grey_900"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/btnChangeLocation"
+                        app:layout_constraintHorizontal_bias="0.43"
+                        app:layout_constraintHorizontal_weight="6"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:id="@+id/btnChangeLocation"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@drawable/btn_change_location"
+                        android:clickable="true"
+                        android:elevation="@dimen/dimen_0_dp"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:padding="@dimen/dimen_12_dp"
+                        android:stateListAnimator="@animator/lift_on_touch"
+                        android:text="@string/change_location"
+                        android:textAllCaps="false"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:textColor="@color/rich_black"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_weight="4"
+                        app:layout_constraintStart_toEndOf="@id/address"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/header_filters"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/white"
+            android:padding="@dimen/dimen_16_dp"
+            android:text="@string/sample_filters"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/rich_black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationContainer" />
+
+        <HorizontalScrollView
+            android:id="@+id/containerMenus"
+            android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@id/sponsor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_filters">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/promotions"
+                    android:layout_width="@dimen/dimen_56_dp"
+                    android:layout_height="@dimen/dimen_56_dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@mipmap/megaphone"
+                    android:tint="@color/white"
+                    app:backgroundTint="@color/material_green_500"
+                    app:layout_constraintEnd_toEndOf="@id/txtPromotions"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtPromotions"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8_dp"
+                    android:text="Promotions"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/rich_black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/txtFavs"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/promotions" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/favs"
+                    android:layout_width="@dimen/dimen_56_dp"
+                    android:layout_height="@dimen/dimen_56_dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@mipmap/star"
+                    android:tint="@color/white"
+                    app:backgroundTint="@color/sky_blue"
+                    app:layout_constraintEnd_toEndOf="@id/txtFavs"
+                    app:layout_constraintStart_toStartOf="@id/txtFavs"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtFavs"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8_dp"
+                    android:text="Favourites"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/rich_black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/txtFast"
+                    app:layout_constraintStart_toEndOf="@id/txtPromotions"
+                    app:layout_constraintTop_toBottomOf="@id/favs" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fast"
+                    android:layout_width="@dimen/dimen_56_dp"
+                    android:layout_height="@dimen/dimen_56_dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@mipmap/time"
+                    android:tint="@color/white"
+                    app:backgroundTint="@color/material_amber_500"
+                    app:layout_constraintEnd_toEndOf="@id/txtFast"
+                    app:layout_constraintStart_toStartOf="@id/txtFast"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtFast"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8_dp"
+                    android:text="Fast"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/rich_black"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/txtFavs"
+                    app:layout_constraintTop_toBottomOf="@id/fast" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </HorizontalScrollView>
+
+
+        <TextView
+            android:id="@+id/sponsor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_sponsor"
+            android:clickable="true"
+            android:focusable="true"
+            android:stateListAnimator="@animator/lift_on_touch"
+            android:text="@string/sponsor"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/containerMenus" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/specialContainer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/nav_header_height_2"
+            android:layout_marginStart="@dimen/dimen_16_dp"
+            android:layout_marginTop="@dimen/dimen_24_dp"
+            android:layout_marginEnd="@dimen/dimen_16_dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/dimen_12_dp"
+            app:cardElevation="@dimen/dimen_8_dp"
+            app:cardPreventCornerOverlap="false"
+            app:layout_constraintBottom_toTopOf="@id/header_restaurants"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sponsor">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/demo_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/demo_img"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#A0000000" />
+
+                <TextView
+                    android:id="@+id/offer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_offer"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:stateListAnimator="@animator/lift_on_touch"
+                    android:text="@string/offer"
+                    android:textAlignment="center"
+                    android:elevation="@dimen/dimen_8_dp"
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/demo_img"
+                    app:layout_constraintTop_toTopOf="@id/demo_img" />
+
+                <TextView
+                    android:id="@+id/sample_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:padding="@dimen/dimen_10_dp"
+                    android:text="@string/sample_promotion"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/sample_desc"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/sample_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:paddingStart="@dimen/dimen_10_dp"
+                    android:paddingEnd="@dimen/dimen_10_dp"
+                    android:paddingBottom="@dimen/dimen_16_dp"
+                    android:text="@string/sample_promotion_description"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/header_restaurants"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:padding="@dimen/dimen_10_dp"
+            android:text="@string/sample_restaurants"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textColor="@color/rich_black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/specialContainer" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listRestaurants"
+            android:layout_width="@dimen/dimen_0_dp"
+            android:focusableInTouchMode="true"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header_restaurants"
+            tools:itemCount="7"
+            tools:listitem="@layout/item_resturants" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

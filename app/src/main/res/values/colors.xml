@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3E92CC</color>
+    <color name="colorPrimary">#6dcef5</color>
     <color name="colorPrimaryDark">#0471A6</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="app_bg">#f4f1f4</color>
 
     <color name="white">#FFFFFF</color>
-    <color name="sky_blue">#78CAD2</color>
+    <color name="sky_blue">#99ddf8</color>
     <color name="sea_blue">#0C6291</color>
     <color name="rich_black">#040403</color>
     <color name="black">#000000</color>
