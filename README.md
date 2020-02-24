@@ -1,5 +1,5 @@
 # :hamburger: Mr. D Food clone app
-Decided to make a Mr. D Food clone Android app. Unfortunately you can't order pizza on this one :disappointed_relieved:
+Decided to make a Mr. D Food clone Android app. Unfortunately you can't order pizza :pizza: on this one :disappointed_relieved:
 
 ## What I learned
 * Google Maps SDK for Android fundementals
