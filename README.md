@@ -13,7 +13,7 @@ Decided to make a Mr. D Food clone Android app. Unfortunately you can't order pi
 <img style="margin-left:10px;" src="art/sc1.png" width="19%" >
 <img style="margin-left:10px;" src="art/sc2.png" width="19%" >
 <img style="margin-left:10px;" src="art/sc3.png" width="19%" >
-
 </div>
+
 ## Contributions
 Feel free to contribute.
