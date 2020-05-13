@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:overScrollMode="never"
-    android:scrollbars="none"
     android:layout_height="match_parent"
     android:background="@color/app_bg"
     android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
     tools:context=".HomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,78 +21,165 @@
             android:elevation="@dimen/dimen_8_dp"
             app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="@dimen/dimen_0_dp"
-            app:contentPadding="@dimen/dimen_24_dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/deliver"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/action_bar_size"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="@dimen/dimen_10_dp"
-                app:cardElevation="@dimen/dimen_0_dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="match_parent">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                <ImageButton
+                    android:id="@+id/btnMenu"
+                    android:layout_width="@dimen/dimen_54_dp"
+                    android:layout_height="@dimen/dimen_54_dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/baseline_menu_black_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/address"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:drawableStart="@mipmap/outline_place_black_24"
-                        android:drawablePadding="@dimen/dimen_8_dp"
-                        android:gravity="center_vertical|start"
-                        android:paddingStart="@dimen/dimen_8_dp"
-                        android:paddingEnd="@dimen/dimen_8_dp"
-                        android:text="@string/sample_address"
-                        android:textAllCaps="false"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-                        android:textColor="@color/material_grey_900"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/btnChangeLocation"
-                        app:layout_constraintHorizontal_bias="0.43"
-                        app:layout_constraintHorizontal_weight="6"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/my_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="@dimen/dimen_8_dp"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="@dimen/dimen_8_dp"
+                    android:paddingEnd="@dimen/dimen_8_dp"
+                    android:text="@string/sample_my_location"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rich_black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/address"
+                    app:layout_constraintStart_toEndOf="@id/btnMenu"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <Button
-                        android:id="@+id/btnChangeLocation"
-                        android:layout_width="0dp"
-                        android:layout_height="0dp"
-                        android:background="@drawable/btn_change_location"
-                        android:clickable="true"
-                        android:elevation="@dimen/dimen_0_dp"
-                        android:focusable="true"
-                        android:gravity="center"
-                        android:padding="@dimen/dimen_12_dp"
-                        android:stateListAnimator="@animator/lift_on_touch"
-                        android:text="@string/change_location"
-                        android:textAllCaps="false"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                        android:textColor="@color/rich_black"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_weight="4"
-                        app:layout_constraintStart_toEndOf="@id/address"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0" />
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="@dimen/dimen_16_dp"
+                    android:layout_marginBottom="@dimen/dimen_8_dp"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="@dimen/dimen_8_dp"
+                    android:paddingEnd="@dimen/dimen_8_dp"
+                    android:text="@string/sample_address"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:textColor="@color/material_grey_900"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/my_location"
+                    app:layout_constraintStart_toEndOf="@id/btnMenu"
+                    app:layout_constraintTop_toBottomOf="@id/my_location" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageButton
+                    android:id="@+id/chevron"
+                    android:layout_width="@dimen/dimen_54_dp"
+                    android:layout_height="@dimen/dimen_54_dp"
+                    android:contentDescription="@null"
+                    android:rotation="270"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:src="@mipmap/baseline_arrow_back_ios_black_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/my_location"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.cardview.widget.CardView>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSearch"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="@dimen/dimen_54_dp"
+                    android:layout_height="@dimen/dimen_54_dp"
+                    android:contentDescription="@null"
+                    android:backgroundTint="@android:color/transparent"
+                    app:icon="@mipmap/baseline_search_black_24"
+                    app:iconSize="@dimen/dimen_28_dp"
+                    app:rippleColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:iconTint="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/gitHubBanner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_16_dp"
+            android:layout_marginTop="@dimen/dimen_8_dp"
+            android:layout_marginEnd="@dimen/dimen_16_dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:orientation="vertical"
+            app:cardBackgroundColor="#f6f8fe"
+            app:cardCornerRadius="@dimen/dimen_12_dp"
+            app:cardElevation="@dimen/dimen_2_dp"
+            app:cardPreventCornerOverlap="false"
+            app:layout_constraintBottom_toTopOf="@id/listOffers"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/locationContainer">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/sample_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="@dimen/dimen_16_dp"
+                    android:drawableEnd="@drawable/emoji_fire"
+                    android:padding="@dimen/dimen_10_dp"
+                    android:text="@string/sample_github_banner"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:textColor="@color/rich_black"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/banner"
+                    app:layout_constraintEnd_toStartOf="@id/banner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/banner" />
+
+
+                <ImageView
+                    android:id="@+id/banner"
+                    android:layout_width="@dimen/dimen_108_dp"
+                    android:layout_height="@dimen/dimen_108_dp"
+                    android:layout_margin="@dimen/dimen_16_dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@null"
+                    android:tint="@color/rich_black"
+                    android:src="@drawable/about_icon_github"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listOffers"
+            android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/header_filters"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gitHubBanner"
+            tools:itemCount="7"
+            tools:listitem="@layout/item_restaurant_offers" />
 
         <TextView
             android:id="@+id/header_filters"
@@ -100,15 +187,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:background="@color/white"
+            android:fontFamily="@font/"
             android:padding="@dimen/dimen_16_dp"
             android:text="@string/sample_filters"
             android:textAlignment="textStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/rich_black"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/locationContainer" />
+            app:layout_constraintTop_toBottomOf="@id/listOffers" />
 
         <HorizontalScrollView
             android:id="@+id/containerMenus"
@@ -118,7 +206,7 @@
             android:fillViewport="true"
             android:overScrollMode="never"
             android:scrollbars="none"
-            app:layout_constraintBottom_toTopOf="@id/sponsor"
+            app:layout_constraintBottom_toTopOf="@id/header_restaurants_browse"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/header_filters">
@@ -176,7 +264,6 @@
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                     android:textColor="@color/rich_black"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@id/txtFast"
                     app:layout_constraintStart_toEndOf="@id/txtPromotions"
                     app:layout_constraintTop_toBottomOf="@id/favs" />
@@ -199,11 +286,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_8_dp"
-                    android:text="Fast"
+                    android:text="Fastest"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                     android:textColor="@color/rich_black"
-                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/txtFavs"
                     app:layout_constraintTop_toBottomOf="@id/fast" />
@@ -211,119 +297,36 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </HorizontalScrollView>
 
-
         <TextView
-            android:id="@+id/sponsor"
+            android:id="@+id/header_restaurants_browse"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/bg_sponsor"
-            android:clickable="true"
-            android:focusable="true"
-            android:stateListAnimator="@animator/lift_on_touch"
-            android:text="@string/sponsor"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-            android:textColor="@color/white"
+            android:padding="@dimen/dimen_10_dp"
+            android:text="@string/sample_restaurants_browse"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/rich_black"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/listRestaurantsBrowse"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/containerMenus" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/specialContainer"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/nav_header_height_2"
-            android:layout_marginStart="@dimen/dimen_16_dp"
-            android:layout_marginTop="@dimen/dimen_24_dp"
-            android:layout_marginEnd="@dimen/dimen_16_dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/dimen_12_dp"
-            app:cardElevation="@dimen/dimen_8_dp"
-            app:cardPreventCornerOverlap="false"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listRestaurantsBrowse"
+            android:layout_width="@dimen/dimen_0_dp"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@id/header_restaurants"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sponsor">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/demo_img"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@null"
-                    android:scaleType="centerCrop"
-                    android:src="@mipmap/demo_img"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#A0000000" />
-
-                <TextView
-                    android:id="@+id/offer"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/bg_offer"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:stateListAnimator="@animator/lift_on_touch"
-                    android:text="@string/offer"
-                    android:textAlignment="center"
-                    android:elevation="@dimen/dimen_8_dp"
-                    android:textAllCaps="true"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@id/demo_img"
-                    app:layout_constraintTop_toTopOf="@id/demo_img" />
-
-                <TextView
-                    android:id="@+id/sample_text"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:padding="@dimen/dimen_10_dp"
-                    android:text="@string/sample_promotion"
-                    android:textAlignment="textStart"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@id/sample_desc"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <TextView
-                    android:id="@+id/sample_desc"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:paddingStart="@dimen/dimen_10_dp"
-                    android:paddingEnd="@dimen/dimen_10_dp"
-                    android:paddingBottom="@dimen/dimen_16_dp"
-                    android:text="@string/sample_promotion_description"
-                    android:textAlignment="textStart"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
+            app:layout_constraintTop_toBottomOf="@id/header_restaurants_browse"
+            tools:itemCount="7"
+            tools:listitem="@layout/item_resturant_browse" />
 
         <TextView
             android:id="@+id/header_restaurants"
@@ -332,24 +335,25 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:padding="@dimen/dimen_10_dp"
-            android:text="@string/sample_restaurants"
+            android:text="@string/sample_restaurants_nearby"
             android:textAlignment="textStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/rich_black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/specialContainer" />
+            app:layout_constraintTop_toBottomOf="@id/listRestaurantsBrowse" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listRestaurants"
             android:layout_width="@dimen/dimen_0_dp"
-            android:focusableInTouchMode="true"
             android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/header_restaurants"
             tools:itemCount="7"
             tools:listitem="@layout/item_resturants" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

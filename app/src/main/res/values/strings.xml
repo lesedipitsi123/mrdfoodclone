@@ -94,8 +94,8 @@
     <string name="google_maps_error">"Unable to resolve location.\nCheck your network connection and try again."</string>
     <string name="sample_address">Address</string>
     <string name="change_location">Change Location</string>
-    <string name="sample_promotion">GET a free burger</string>
-    <string name="sample_promotion_description">Simply follow me on my github :)</string>
+    <string name="sample_promotion">BUY me a coffee</string>
+    <string name="sample_promotion_description">Simply follow me on my github</string>
     <string name="sponsor">Sponsor</string>
     <string name="sample_restaurants">Restaurants</string>
     <string name="sample_restaurants_tags">Asian, Italian, Mexican, Pizza</string>
@@ -108,5 +108,12 @@
     <string name="sample_restaurant_tag2">Chicken, Burger, Chips</string>
     <string name="sample_restaurant_tag3">Asian, Noodles</string>
     <string name="sample_restaurant3">Sushi Bar</string>
+    <string name="sample_no_stores">4 Stores</string>
+    <string name="sample_restaurants_browse">Browse your favourite restaurants</string>
+    <string name="sample_my_location">My Current Location</string>
+    <string name="sample_github_banner">Follow me on github for more!</string>
+    <string name="sample_restaurants_nearby">Restaurants Nearby</string>
+    <string name="search_address">Enter address</string>
+    <string name="map_tooltip">Move map to street</string>
 
 </resources>

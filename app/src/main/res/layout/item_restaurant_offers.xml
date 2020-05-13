@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/specialContainer"
+    android:layout_width="@dimen/dimen_256_dp"
+    android:layout_height="@dimen/dimen_256_dp"
+    android:layout_marginStart="@dimen/dimen_16_dp"
+    android:layout_marginTop="@dimen/dimen_24_dp"
+    android:layout_marginEnd="@dimen/dimen_16_dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/dimen_12_dp"
+    app:cardElevation="@dimen/dimen_8_dp"
+    app:cardPreventCornerOverlap="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/demo_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/demo_img"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sample_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/gradient_header_background" />
+
+        <TextView
+            android:id="@+id/offer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_offer"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/offer"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/demo_img"
+            app:layout_constraintTop_toTopOf="@id/demo_img" />
+
+        <TextView
+            android:id="@+id/sample_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="@dimen/dimen_16_dp"
+            android:padding="@dimen/dimen_10_dp"
+            android:text="@string/sample_promotion"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/sample_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sample_desc"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="@dimen/dimen_16_dp"
+            android:backgroundTint="@android:color/transparent"
+            android:clickable="false"
+            android:fontFamily="@font/work_sans_medium"
+            android:paddingStart="@dimen/dimen_10_dp"
+            android:paddingEnd="@dimen/dimen_10_dp"
+            android:paddingBottom="@dimen/dimen_16_dp"
+            android:text="@string/sample_promotion_description"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            app:icon="@drawable/emoji_google_1f4e2"
+            app:iconSize="@dimen/dimen_18_dp"
+            app:iconTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

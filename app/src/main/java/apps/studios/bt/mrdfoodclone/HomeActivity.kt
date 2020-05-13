@@ -36,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
 
         address.text = addressString
 
-        btnChangeLocation.setOnClickListener {
+        my_location.setOnClickListener {
             startActivity(Intent(this@HomeActivity, MapActivity::class.java))
             finish()
         }
