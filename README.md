@@ -10,8 +10,8 @@ Decided to make a Mr. D Food :hamburger: clone android app. Unfortunately you ca
 ## Screenshots
 <div style="display:flex;" >
 <img  src="art/sc1.png" width="19%" >
-<img style="margin-left:10px;" src="art/sc1.png" width="19%" >
 <img style="margin-left:10px;" src="art/sc2.png" width="19%" >
+<img style="margin-left:10px;" src="art/sc1.png" width="19%" >
 <img style="margin-left:10px;" src="art/sc3.png" width="19%" >
 
 </div>
