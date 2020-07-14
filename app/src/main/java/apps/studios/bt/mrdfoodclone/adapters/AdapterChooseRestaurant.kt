@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import apps.studios.bt.mrdfoodclone.R
 import apps.studios.bt.mrdfoodclone.models.Restaurant
+import kotlinx.android.synthetic.main.item_choose_restaurant.view.*
 
 class AdapterChooseRestaurant(val context: Context, val chooseRestaurants: List<Restaurant>) :
     RecyclerView.Adapter<AdapterChooseRestaurant.MyViewHolder>() {
@@ -16,7 +17,7 @@ class AdapterChooseRestaurant(val context: Context, val chooseRestaurants: List<
     }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
+        val restaurantName = itemView.txtRestaurant
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -31,6 +32,7 @@ class AdapterChooseRestaurant(val context: Context, val chooseRestaurants: List<
     override fun getItemCount() = chooseRestaurants.size
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
+        val item = chooseRestaurants[position]
+        holder.restaurantName.text = item.restaurant_name
     }
 }

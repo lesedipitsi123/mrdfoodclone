@@ -1,5 +1,5 @@
 # :hamburger: Mr. D Food clone app
-Decided to make a Mr. D Food clone Android app. Unfortunately you can't order pizza :pizza: on this one :disappointed_relieved:
+Decided to make a Mr. D Food clone Android app with a twist in UX/UI design. Unfortunately you can't order pizza :pizza: on this one :disappointed_relieved:
 
 ## What I learned
 * Google Maps SDK for Android fundementals
@@ -9,9 +9,10 @@ Decided to make a Mr. D Food clone Android app. Unfortunately you can't order pi
 
 ## Screenshots
 <div style="display:flex;" >
-<img  src="art/sc1.png" width="25%" >
-<img style="margin-left:10px;" src="art/sc2.png" width="25%" >
-<img style="margin-left:10px;" src="art/sc3.png" width="25%" >
+<img  src="art/sc1.jpg" width="25%" >
+<img style="margin-left:10px;" src="art/sc2.jpg" width="25%" >
+<img style="margin-left:10px;" src="art/sc3.jpg" width="25%" >
+<img style="margin-left:10px;" src="art/sc4.jpg" width="25%" >
 </div>
 
 ## Contributions

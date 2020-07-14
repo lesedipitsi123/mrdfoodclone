@@ -7,8 +7,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:fontFamily">@font/rubik</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowTranslucentStatus">true</item>
         <item name="colorControlActivated">@color/material_yellow_500</item>
         <item name="colorControlNormal">@color/rich_black</item>
         <item name="colorControlHighlight">@color/material_yellow_500</item>

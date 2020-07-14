@@ -10,10 +10,9 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        app:elevation="@dimen/dimen_0_dp"
         android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Light">
+        android:backgroundTint="@android:color/transparent"
+        app:elevation="@dimen/dimen_0_dp">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/toolbar"
@@ -22,7 +21,7 @@
             android:elevation="@dimen/dimen_6_dp"
             app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="@dimen/dimen_0_dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -47,15 +46,15 @@
                     android:layout_marginTop="@dimen/dimen_8_dp"
                     android:layout_marginBottom="@dimen/dimen_8_dp"
                     android:ellipsize="end"
+                    android:fontFamily="@font/rubik_medium"
                     android:gravity="center_vertical|start"
                     android:lines="1"
                     android:minHeight="?attr/actionBarSize"
                     android:padding="8dp"
                     android:text="123 Address"
                     android:textAllCaps="false"
-                    android:fontFamily="@font/rubik_medium"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/rich_black"
+                    android:textSize="13sp"
                     app:backgroundTint="@color/sky_blue"
                     app:cornerRadius="@dimen/dimen_28_dp"
                     app:icon="@mipmap/ic_map_pin"
@@ -72,8 +71,11 @@
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:layout_width="@dimen/dimen_48_dp"
                     android:layout_height="@dimen/dimen_48_dp"
+                    android:background="?selectableItemBackgroundBorderless"
                     android:backgroundTint="@android:color/transparent"
+                    android:clickable="true"
                     android:contentDescription="@null"
+                    android:focusable="true"
                     android:rotation="270"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     app:icon="@mipmap/baseline_arrow_back_ios_black_24"
@@ -82,13 +84,14 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/btnSearch"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:rippleColor="@color/white" />
+                    app:rippleColor="@color/colorAccent" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnSearch"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:layout_width="@dimen/dimen_54_dp"
                     android:layout_height="@dimen/dimen_54_dp"
+                    android:background="?selectableItemBackgroundBorderless"
                     android:backgroundTint="@android:color/transparent"
                     android:contentDescription="@null"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
@@ -103,86 +106,21 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/gitHubBanner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen_16_dp"
-            android:elevation="@dimen/dimen_8_dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/dimen_8_dp"
-            app:layout_scrollFlags="scroll">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/banner_bg"
-                android:padding="@dimen/dimen_16_dp">
-
-                <TextView
-                    android:id="@+id/txt1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/dimen_16_dp"
-                    android:text="Star the repo for more!"
-                    android:textAllCaps="true"
-                    android:textColor="@color/rich_black"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@id/card_image"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txt2"
-                    android:layout_width="@dimen/dimen_0_dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="@dimen/dimen_16_dp"
-                    android:text="@string/repo_description"
-                    android:textColor="@color/material_grey_700"
-                    android:textSize="15sp"
-                    android:fontFamily="@font/rubik_medium"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/card_image"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txt1" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_image"
-                    android:layout_width="92dp"
-                    android:layout_height="92dp"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="@dimen/dimen_10_dp"
-                    app:cardElevation="0dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:contentDescription="@null"
-                        android:src="@drawable/ic_heart" />
-
-                </androidx.cardview.widget.CardView>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
         android:overScrollMode="never"
         android:scrollbars="none"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dimen_144_dp">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listPromotions"
@@ -191,11 +129,11 @@
                 android:clipToPadding="false"
                 android:nestedScrollingEnabled="true"
                 android:orientation="horizontal"
-                tools:itemCount="5"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="5"
                 tools:listitem="@layout/item_restaurant_offers" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -203,6 +141,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
+                android:paddingTop="@dimen/dimen_8_dp"
+                android:paddingBottom="@dimen/dimen_8_dp"
                 app:layout_constraintBottom_toTopOf="@id/listRestaurants"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -217,8 +157,8 @@
                     android:lines="1"
                     android:padding="@dimen/dimen_12_dp"
                     android:text="Filter By"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@color/rich_black"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -227,10 +167,12 @@
                     android:id="@+id/listFilters"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_16_dp"
                     android:clipToPadding="false"
                     android:nestedScrollingEnabled="true"
                     android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toTopOf="@id/sampleBanner"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/txtFilter"
@@ -244,6 +186,7 @@
                     android:layout_margin="@dimen/dimen_16_dp"
                     android:elevation="@dimen/dimen_8_dp"
                     app:cardCornerRadius="@dimen/dimen_8_dp"
+                    app:layout_constraintBottom_toTopOf="@id/txtChooseRestaurant"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/listFilters">
@@ -262,14 +205,15 @@
                     android:id="@+id/txtChooseRestaurant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_16_dp"
                     android:ellipsize="end"
                     android:lines="1"
-                    android:layout_marginTop="@dimen/dimen_16_dp"
                     android:padding="@dimen/dimen_12_dp"
                     android:text="Choose from SA's favourites"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:textColor="@color/rich_black"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/listChooseRestaurants"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/sampleBanner" />
 
@@ -281,42 +225,45 @@
                     android:nestedScrollingEnabled="true"
                     android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/txtBrowseRestaurants"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/txtChooseRestaurant"
                     tools:itemCount="3"
                     tools:listitem="@layout/item_choose_restaurant" />
 
+                <TextView
+                    android:id="@+id/txtBrowseRestaurants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:padding="@dimen/dimen_12_dp"
+                    android:text="What are you feeling like?"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/listBrowseRestaurants"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/listChooseRestaurants" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listBrowseRestaurants"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_16_dp"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtBrowseRestaurants"
+                    tools:listitem="@layout/item_resturant_browse" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <TextView
-                android:id="@+id/txtBrowseRestaurants"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:ellipsize="end"
-                android:lines="1"
-                android:padding="@dimen/dimen_12_dp"
-                android:text="What are you feeling like?"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/rich_black"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/containerFilter" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listBrowseRestaurants"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clipToPadding="false"
-                android:nestedScrollingEnabled="true"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtBrowseRestaurants"
-                tools:listitem="@layout/item_resturant_browse" />
 
             <TextView
                 android:id="@+id/txtNumberRestaurants"
@@ -327,27 +274,87 @@
                 android:lines="1"
                 android:padding="@dimen/dimen_12_dp"
                 android:text="7 restaurants near you"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/rich_black"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/listRestaurants"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/listBrowseRestaurants" />
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/listRestaurants"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:clipToPadding="false"
-                android:fitsSystemWindows="true"
+                android:layout_height="wrap_content"
                 android:nestedScrollingEnabled="true"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtNumberRestaurants"
                 tools:listitem="@layout/item_resturants" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/gitHubBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_margin="@dimen/dimen_16_dp"
+        android:background="@android:color/transparent"
+        android:elevation="@dimen/dimen_8_dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/dimen_8_dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_scrollFlags="scroll|enterAlways">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/banner_bg"
+            android:padding="@dimen/dimen_16_dp">
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimen_16_dp"
+                android:text="Follow me on github &amp; star the repo for more"
+                android:textAllCaps="false"
+                android:textColor="@color/rich_black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/card_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="@dimen/dimen_0_dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/dimen_16_dp"
+                android:text="@string/repo_description"
+                android:textColor="@color/material_grey_700"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toStartOf="@id/card_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt1" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_image"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/dimen_10_dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:src="@drawable/about_icon_github" />
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

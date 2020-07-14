@@ -13,6 +13,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        signUp.setOnClickListener {
+            startActivity(Intent(this, SignUpActivity::class.java))
+        }
+
+        logIn.setOnClickListener {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
+
         deliver.setOnClickListener {
             startActivity(Intent(this, MapActivity::class.java))
         }

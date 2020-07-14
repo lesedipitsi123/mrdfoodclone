@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MrD Food Clone</string>
+    <string name="app_name">Mr D Food Clone</string>
     <string name="lorem_ipsum_short" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
         feugiat, nunc eget volutpat viverra, lacus ligula venenatis nulla, in accumsan eros eros nec ipsum. Fusce eget
         massa id lorem blandit lobortis. Donec lacus ligula, commodo quis eleifend ac, rhoncus sed mi. Curabitur luctus
@@ -128,7 +128,7 @@
     <string name="sample_restaurant4">McDonalds</string>
     <string name="sample_restaurant_category">Burgers</string>
     <string name="sample_restaurant_category2">Pizza</string>
-    <string name="sample_restaurant_category3">Burritos</string>
+    <string name="sample_restaurant_category3">Sandwiches</string>
     <string name="sample_restaurant_category4">Salads</string>
 
 </resources>

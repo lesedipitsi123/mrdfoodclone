@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_home"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
     <ImageButton
@@ -112,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen_16_dp"
         android:clickable="true"
-        android:elevation="@dimen/dimen_0_dp"
+        android:elevation="@dimen/dimen_4_dp"
         android:focusable="true"
         android:padding="@dimen/dimen_14_dp"
         android:stateListAnimator="@animator/lift_on_touch"
@@ -122,7 +122,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/rich_black"
         android:textStyle="bold"
-        app:backgroundTint="@android:color/transparent"
+        app:backgroundTint="?colorPrimary"
         app:cornerRadius="@dimen/dimen_8_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/logIn"
@@ -139,7 +139,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen_16_dp"
         android:clickable="true"
-        android:elevation="@dimen/dimen_0_dp"
+        android:elevation="@dimen/dimen_4_dp"
         android:focusable="true"
         android:padding="@dimen/dimen_14_dp"
         android:text="@string/sample_login"
@@ -148,7 +148,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/rich_black"
         android:textStyle="bold"
-        app:backgroundTint="@android:color/transparent"
+        app:backgroundTint="?colorPrimary"
         app:cornerRadius="@dimen/dimen_8_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,6 +157,6 @@
         app:layout_constraintVertical_bias="0.0"
         app:rippleColor="@color/material_blue_100"
         app:strokeColor="@color/rich_black"
-        app:strokeWidth="@dimen/dimen_2_dp" />
+        app:strokeWidth="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

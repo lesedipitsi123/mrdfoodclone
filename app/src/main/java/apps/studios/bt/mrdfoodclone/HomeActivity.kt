@@ -77,10 +77,22 @@ class HomeActivity : AppCompatActivity() {
     )
 
     private fun demoBrowseRestaurants() = mutableListOf(
-        BrowseRestaurant(getString(R.string.sample_restaurant_category), 5),
-        BrowseRestaurant(getString(R.string.sample_restaurant_category2), 6),
-        BrowseRestaurant(getString(R.string.sample_restaurant_category3), 4),
-        BrowseRestaurant(getString(R.string.sample_restaurant_category4), 10)
+        BrowseRestaurant(
+            getString(R.string.sample_restaurant_category),
+            5,
+            R.drawable.demo_food_img2
+        ),
+        BrowseRestaurant(
+            getString(R.string.sample_restaurant_category2),
+            6,
+            R.drawable.demo_food_img
+        ),
+        BrowseRestaurant(
+            getString(R.string.sample_restaurant_category3),
+            4,
+            R.drawable.demo_food_img3
+        ),
+        BrowseRestaurant(getString(R.string.sample_restaurant_category4), 10, R.mipmap.ic_banner)
     )
 
     private fun demoRestaurants() = mutableListOf(

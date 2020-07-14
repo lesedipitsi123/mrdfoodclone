@@ -5,6 +5,7 @@ import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import apps.studios.bt.mrdfoodclone.R
 import apps.studios.bt.mrdfoodclone.models.Filter
@@ -36,7 +37,7 @@ class AdapterFilter(val context: Context, val filters: List<Filter>) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val item = filters[position]
         holder.filterImage.icon = context.getDrawable(item.filterIllustration)
-        holder.filterImage.backgroundTintList = ColorStateList.valueOf(item.colorRes)
+        holder.filterImage.backgroundTintList = ContextCompat.getColorStateList(context, item.colorRes)
         holder.filterName.text = item.filterLabel
     }
 }

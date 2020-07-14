@@ -10,7 +10,7 @@
     android:orientation="vertical"
     android:stateListAnimator="@animator/lift_on_touch"
     app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="@dimen/dimen_16_dp"
+    app:cardCornerRadius="@dimen/dimen_10_dp"
     app:cardElevation="3dp"
     app:cardPreventCornerOverlap="false"
     app:contentPaddingBottom="@dimen/dimen_16_dp">
@@ -22,9 +22,9 @@
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/holderCoverImage"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/nav_header_height"
+            android:layout_height="@dimen/dimen_144_dp"
             android:elevation="@dimen/dimen_4_dp"
-            app:cardCornerRadius="@dimen/dimen_18_dp"
+            app:cardCornerRadius="@dimen/dimen_10_dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -51,9 +51,9 @@
             android:text="@string/sample_restaurants"
             android:textAlignment="textStart"
             android:textAllCaps="false"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/rich_black"
-            android:textStyle="bold"
+            android:fontFamily="@font/rubik_medium"
             app:layout_constraintBottom_toTopOf="@id/restaurant_tags"
             app:layout_constraintEnd_toStartOf="@id/containerExtras"
             app:layout_constraintStart_toEndOf="@id/avatar"
@@ -82,8 +82,8 @@
 
         <ImageView
             android:id="@+id/avatar"
-            android:layout_width="@dimen/dimen_48_dp"
-            android:layout_height="@dimen/dimen_48_dp"
+            android:layout_width="@dimen/dimen_42_dp"
+            android:layout_height="@dimen/dimen_42_dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:contentDescription="@null"
@@ -115,7 +115,7 @@
             android:text="@string/sample_restaurants_rating"
             android:textAlignment="textStart"
             android:textAllCaps="false"
-            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
             android:textColor="@color/material_green_700"
             app:layout_constraintEnd_toStartOf="@id/containerExtras"
             app:layout_constraintStart_toEndOf="@id/icRating"
@@ -155,7 +155,7 @@
                 android:layout_marginTop="8dp"
                 app:cardBackgroundColor="@color/material_pink_400"
                 app:cardCornerRadius="@dimen/dimen_22_dp"
-                app:cardElevation="@dimen/dimen_8_dp"
+                app:cardElevation="@dimen/dimen_6_dp"
                 app:layout_constraintEnd_toEndOf="@id/collect"
                 app:layout_constraintStart_toStartOf="@+id/collect"
                 app:layout_constraintTop_toBottomOf="@id/collect">
@@ -227,7 +227,7 @@
                 android:layout_marginTop="8dp"
                 app:cardBackgroundColor="@color/sky_blue"
                 app:cardCornerRadius="@dimen/dimen_22_dp"
-                app:cardElevation="@dimen/dimen_8_dp"
+                app:cardElevation="@dimen/dimen_6_dp"
                 app:layout_constraintEnd_toEndOf="@id/delivery"
                 app:layout_constraintStart_toStartOf="@id/delivery"
                 app:layout_constraintTop_toBottomOf="@id/delivery">

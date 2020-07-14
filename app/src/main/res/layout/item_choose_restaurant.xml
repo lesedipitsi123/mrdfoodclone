@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    android:layout_marginEnd="@dimen/dimen_24_dp"
-    android:layout_marginStart="@dimen/dimen_24_dp"
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="@dimen/dimen_64_dp"
-    android:layout_height="@dimen/dimen_64_dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen_8_dp"
+    android:layout_marginEnd="@dimen/dimen_8_dp"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/featuredRestaurant"
+        android:layout_width="@dimen/dimen_64_dp"
+        android:layout_height="@dimen/dimen_64_dp"
         android:contentDescription="@null"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/default_restaurant_logo"/>
-</FrameLayout>
+        android:src="@mipmap/default_restaurant_logo" />
+
+    <TextView
+        android:id="@+id/txtRestaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:layout_marginTop="16dp"
+        android:text="KFC"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/rich_black"/>
+
+</LinearLayout>
