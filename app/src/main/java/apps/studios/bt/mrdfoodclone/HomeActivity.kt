@@ -1,89 +1,93 @@
 package apps.studios.bt.mrdfoodclone
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import apps.studios.bt.mrdfoodclone.adapters.*
+import apps.studios.bt.mrdfoodclone.models.BrowseRestaurant
+import apps.studios.bt.mrdfoodclone.models.Filter
+import apps.studios.bt.mrdfoodclone.models.Promotion
 import apps.studios.bt.mrdfoodclone.models.Restaurant
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.item_resturants.view.*
 
 class HomeActivity : AppCompatActivity() {
 
-    var addressString: String? = null
+    companion object {
+    }
+
+    private var addressString: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        val resultIntent : Intent? = getIntent()
+        val resultIntent: Intent? = intent
         addressString = resultIntent?.getStringExtra("Address")
         initComponents()
     }
 
-    private fun initComponents()
-    {
+    private fun initComponents() {
+        address.text = addressString
+        listPromotions.apply {
+            layoutManager = LinearLayoutManager(this@HomeActivity, RecyclerView.HORIZONTAL, false)
+            adapter = AdapterPromotion(this@HomeActivity, demoPromotions())
+            hasFixedSize()
+        }
+        listFilters.apply {
+            layoutManager = LinearLayoutManager(this@HomeActivity, RecyclerView.HORIZONTAL, false)
+            adapter = AdapterFilter(this@HomeActivity, demoFilters())
+            hasFixedSize()
+        }
+        listChooseRestaurants.apply {
+            layoutManager = LinearLayoutManager(this@HomeActivity, RecyclerView.HORIZONTAL, false)
+            adapter = AdapterChooseRestaurant(this@HomeActivity, demoChooseRestaurants())
+            hasFixedSize()
+        }
+        listBrowseRestaurants.apply {
+            layoutManager = LinearLayoutManager(this@HomeActivity, RecyclerView.HORIZONTAL, false)
+            adapter = AdapterBrowseRestaurant(this@HomeActivity, demoBrowseRestaurants())
+            hasFixedSize()
+        }
         listRestaurants.apply {
             layoutManager = LinearLayoutManager(this@HomeActivity, RecyclerView.VERTICAL, false)
+            adapter = AdapterRestaurant(this@HomeActivity, demoRestaurants())
             hasFixedSize()
-            isNestedScrollingEnabled = true
-            adapter = RestaurantsAdapter(this@HomeActivity, demoRestaurants())
         }
-
-        address.text = addressString
-
-        my_location.setOnClickListener {
-            startActivity(Intent(this@HomeActivity, MapActivity::class.java))
-            finish()
-        }
+        txtNumberRestaurants.text = "${demoRestaurants().size} restaurants near you"
     }
 
-    private fun demoRestaurants()= mutableListOf(Restaurant(getString(R.string.sample_restaurant1),
-        getString(R.string.sample_restaurant_tag1), R.mipmap.demo_img),
-        Restaurant(getString(R.string.sample_restaurant2),
-            getString(R.string.sample_restaurant_tag2), R.drawable.clothestwo),
-       Restaurant(getString(R.string.sample_restaurant3),
-            getString(R.string.sample_restaurant_tag3), R.drawable.gameui)
-        )
+    private fun demoPromotions() = mutableListOf(
+        Promotion(getString(R.string.follow_me), R.drawable.demo_food_img3),
+        Promotion(getString(R.string.follow_me), R.drawable.demo_food_img3),
+        Promotion(getString(R.string.follow_me), R.drawable.demo_food_img3)
+    )
 
+    private fun demoFilters() = mutableListOf(
+        Filter(getString(R.string.filter1), R.mipmap.sale, R.color.material_red_500),
+        Filter(getString(R.string.filter2), R.mipmap.heart, R.color.material_pink_300),
+        Filter(getString(R.string.filter3), R.mipmap.bullhorn, R.color.material_green_700)
+    )
 
-    private inner class RestaurantsAdapter(val context: Context, val listOfRestaurants: MutableList<Restaurant>) : RecyclerView.Adapter<RestaurantsAdapter.RestaurantViewHolder>()
-    {
-        init {
-            hasStableIds()
-        }
+    private fun demoChooseRestaurants() = mutableListOf(
+        Restaurant(getString(R.string.sample_restaurant1)),
+        Restaurant(getString(R.string.sample_restaurant2)),
+        Restaurant(getString(R.string.sample_restaurant3)),
+        Restaurant(getString(R.string.sample_restaurant4))
+    )
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
-            val view =LayoutInflater.from(context).inflate(R.layout.item_resturants, parent, false)
+    private fun demoBrowseRestaurants() = mutableListOf(
+        BrowseRestaurant(getString(R.string.sample_restaurant_category), 5),
+        BrowseRestaurant(getString(R.string.sample_restaurant_category2), 6),
+        BrowseRestaurant(getString(R.string.sample_restaurant_category3), 4),
+        BrowseRestaurant(getString(R.string.sample_restaurant_category4), 10)
+    )
 
-            return RestaurantViewHolder(view)
-        }
+    private fun demoRestaurants() = mutableListOf(
+        Restaurant(getString(R.string.sample_restaurant1), cover_img = R.drawable.demo_food_img),
+        Restaurant(getString(R.string.sample_restaurant2), cover_img = R.drawable.demo_food_img2),
+        Restaurant(getString(R.string.sample_restaurant3), cover_img = R.drawable.demo_food_img3),
+        Restaurant(getString(R.string.sample_restaurant4), cover_img = R.mipmap.demo_img)
+    )
 
-        override fun getItemCount(): Int {
-            return listOfRestaurants.size
-        }
-
-        override fun getItemId(position: Int): Long {
-            return listOfRestaurants[position].hashCode().toLong()
-        }
-        override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
-            val item = listOfRestaurants[position]
-            holder.restaurant_name.text = item.restaurant_name
-            holder.restaurant_tags.text = item.restaurant_tags
-            holder.cover_img.setImageResource(item.cover_img)
-        }
-
-        inner class RestaurantViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
-        {
-            val cover_img = itemView.cover_img
-            val restaurant_name = itemView.restaurant_name
-            val restaurant_tags = itemView.restaurant_tags
-            val ratings = itemView.restaurant_rating
-        }
-
-    }
 }

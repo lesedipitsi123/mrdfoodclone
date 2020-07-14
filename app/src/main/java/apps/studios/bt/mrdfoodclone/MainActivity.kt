@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
         deliver.setOnClickListener {
             startActivity(Intent(this, MapActivity::class.java))
         }
+
         btnGithub.setOnClickListener {
             val intent =
                 Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/lesedipitsi123"))

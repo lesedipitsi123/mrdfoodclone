@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/dimen_24_dp"
+    android:layout_marginEnd="@dimen/dimen_24_dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnFilter"
+        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+        android:layout_width="@dimen/dimen_64_dp"
+        android:layout_height="@dimen/dimen_64_dp"
+        android:gravity="center"
+        android:elevation="@dimen/dimen_6_dp"
+        app:backgroundTint="@color/material_red_500"
+        app:cornerRadius="@dimen/dimen_48_dp"
+        app:icon="@mipmap/sale"
+        android:text="@null"
+        app:iconSize="@dimen/dimen_28_dp"
+        app:iconTint="@color/white" />
+
+    <TextView
+        android:id="@+id/txtFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/filter1"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/rich_black"
+        android:textStyle="bold" />
+
+</LinearLayout>

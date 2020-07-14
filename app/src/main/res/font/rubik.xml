@@ -2,11 +2,17 @@
 <font-family xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <font
-        app:font="@font/work_sans_regular"
+        app:font="@font/rubik_regular"
         app:fontStyle="normal"
         app:fontWeight="400" />
+
     <font
-        app:font="@font/work_sans_bold"
+        app:font="@font/rubik_medium"
+        app:fontStyle="normal"
+        app:fontWeight="500" />
+
+    <font
+        app:font="@font/rubik_bold"
         app:fontStyle="normal"
         app:fontWeight="700" />
 

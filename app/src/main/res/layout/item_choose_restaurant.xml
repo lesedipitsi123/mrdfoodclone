@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_marginEnd="@dimen/dimen_24_dp"
+    android:layout_marginStart="@dimen/dimen_24_dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="@dimen/dimen_64_dp"
+    android:layout_height="@dimen/dimen_64_dp">
+
+    <ImageView
+        android:id="@+id/featuredRestaurant"
+        android:contentDescription="@null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/default_restaurant_logo"/>
+</FrameLayout>

@@ -18,11 +18,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".HomeActivity"/>
+        <activity android:name=".SignUpActivity"/>
+        <activity
+            android:name=".LoginActivity"
+            android:windowSoftInputMode="adjustPan" />
 
-        <meta-data
+        <activity android:name=".HomeActivity" />
+
+    <!--    <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="API_KEY" />
+            android:value="API_KEY" />-->
 
         <activity android:name=".MapActivity" />
         <activity android:name=".MainActivity">

@@ -4,33 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/bg_home"
     tools:context=".MainActivity">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:id="@+id/btnDrawer"
+        android:layout_width="@dimen/dimen_54_dp"
+        android:layout_height="@dimen/dimen_54_dp"
         android:layout_margin="@dimen/dimen_16_dp"
-        android:backgroundTint="@android:color/transparent"
-        android:clickable="true"
+        android:background="?selectableItemBackgroundBorderless"
         android:contentDescription="@null"
-        android:elevation="@dimen/dimen_0_dp"
-        android:focusable="true"
-        android:gravity="center"
-        android:padding="@dimen/dimen_8_dp"
-        android:stateListAnimator="@animator/lift_on_touch"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/rich_black"
-        android:textStyle="bold"
-        app:icon="@mipmap/baseline_menu_black_24"
-        app:iconSize="@dimen/dimen_24_dp"
-        app:iconTint="@color/rich_black"
+        android:src="@mipmap/baseline_menu_black_24"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:rippleColor="@color/material_blue_100" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageButton
@@ -52,7 +38,7 @@
         android:src="@drawable/clone_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/btnDrawer" />
 
 
     <TextView
@@ -60,6 +46,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/rubik_bold"
         android:text="@string/sample_clone_title"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -69,6 +56,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mrdCloneIcon" />
+
+
+    <TextView
+        android:id="@+id/cloneSlogan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_16_dp"
+        android:fontFamily="@font/rubik_regular"
+        android:text="Find the food you feel like, on the real app."
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:textAllCaps="false"
+        android:textColor="@color/rich_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/deliver" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/deliver"
@@ -109,7 +112,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen_16_dp"
         android:clickable="true"
-        android:elevation="@dimen/dimen_2_dp"
+        android:elevation="@dimen/dimen_0_dp"
         android:focusable="true"
         android:padding="@dimen/dimen_14_dp"
         android:stateListAnimator="@animator/lift_on_touch"
@@ -119,13 +122,15 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/rich_black"
         android:textStyle="bold"
-        app:backgroundTint="@color/sky_blue"
+        app:backgroundTint="@android:color/transparent"
         app:cornerRadius="@dimen/dimen_8_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/logIn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/deliver"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.0"
+        app:strokeColor="@color/rich_black"
+        app:strokeWidth="@dimen/dimen_2_dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/logIn"
@@ -134,23 +139,24 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dimen_16_dp"
         android:clickable="true"
-        android:elevation="@dimen/dimen_2_dp"
+        android:elevation="@dimen/dimen_0_dp"
         android:focusable="true"
         android:padding="@dimen/dimen_14_dp"
-        android:stateListAnimator="@animator/lift_on_touch"
         android:text="@string/sample_login"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/rich_black"
         android:textStyle="bold"
-        app:backgroundTint="@color/sky_blue"
+        app:backgroundTint="@android:color/transparent"
         app:cornerRadius="@dimen/dimen_8_dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/signUp"
         app:layout_constraintTop_toBottomOf="@id/deliver"
-        app:layout_constraintVertical_bias="0.1"
-        app:rippleColor="@color/material_blue_100" />
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="@color/material_blue_100"
+        app:strokeColor="@color/rich_black"
+        app:strokeWidth="@dimen/dimen_2_dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

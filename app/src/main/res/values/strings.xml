@@ -84,8 +84,8 @@
         tellus pellentesque sed nullam quis.
     </string>
     <string name="sample_button_order">Get it delivered fast &amp; hot</string>
-    <string name="sample_signup">Sign Up</string>
-    <string name="sample_login">Log In</string>
+    <string name="sample_signup">Sign up</string>
+    <string name="sample_login">Login</string>
     <string name="sample_clone_title">Mr. D Food Clone</string>
     <string name="title_location_sheet">Select Location</string>
     <string name="sample_location">Location</string>
@@ -94,14 +94,14 @@
     <string name="google_maps_error">"Unable to resolve location.\nCheck your network connection and try again."</string>
     <string name="sample_address">Address</string>
     <string name="change_location">Change Location</string>
-    <string name="sample_promotion">BUY me a coffee</string>
+    <string name="sample_promotion">follow me on github to show support.</string>
     <string name="sample_promotion_description">Simply follow me on my github</string>
     <string name="sponsor">Sponsor</string>
     <string name="sample_restaurants">Restaurants</string>
     <string name="sample_restaurants_tags">Asian, Italian, Mexican, Pizza</string>
     <string name="sample_restaurants_rating">4.4 (500) \u2022 800m away</string>
     <string name="sample_filters">Filter By</string>
-    <string name="offer">Offer</string>
+    <string name="offer">NEW</string>
     <string name="sample_restaurant1">Wimpy</string>
     <string name="sample_restaurant_tag1">Burger</string>
     <string name="sample_restaurant2">KFC</string>
@@ -113,7 +113,22 @@
     <string name="sample_my_location">My Current Location</string>
     <string name="sample_github_banner">Follow me on github for more!</string>
     <string name="sample_restaurants_nearby">Restaurants Nearby</string>
-    <string name="search_address">Enter address</string>
+    <string name="search_address">Pick street address</string>
     <string name="map_tooltip">Move map to street</string>
+    <string name="sample_f_name">First name</string>
+    <string name="sample_l_name">Last name</string>
+    <string name="sample_password">Password</string>
+    <string name="sample_email">Email address</string>
+    <string name="sample_cell">Cell number</string>
+    <string name="repo_description">Decided to make a clone of Mr. D Food</string>
+    <string name="follow_me">Follow me on github to show support</string>
+    <string name="filter1">On Special</string>
+    <string name="filter2">Favourites</string>
+    <string name="filter3">New</string>
+    <string name="sample_restaurant4">McDonalds</string>
+    <string name="sample_restaurant_category">Burgers</string>
+    <string name="sample_restaurant_category2">Pizza</string>
+    <string name="sample_restaurant_category3">Burritos</string>
+    <string name="sample_restaurant_category4">Salads</string>
 
 </resources>

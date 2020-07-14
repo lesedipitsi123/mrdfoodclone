@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_bg"
-    android:fillViewport="true"
-    android:overScrollMode="never"
-    android:scrollbars="none"
+    android:fitsSystemWindows="true"
     tools:context=".HomeActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:elevation="@dimen/dimen_0_dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Light">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/locationContainer"
-            android:layout_width="@dimen/dimen_0_dp"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="@dimen/dimen_8_dp"
+            android:elevation="@dimen/dimen_6_dp"
             app:cardBackgroundColor="@color/colorPrimary"
             app:cardCornerRadius="@dimen/dimen_0_dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -36,324 +35,319 @@
                     android:background="?selectableItemBackgroundBorderless"
                     android:contentDescription="@null"
                     android:src="@mipmap/baseline_menu_black_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/my_location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="16dp"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/address"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_8_dp"
+                    android:layout_marginBottom="@dimen/dimen_8_dp"
+                    android:ellipsize="end"
                     android:gravity="center_vertical|start"
-                    android:paddingStart="@dimen/dimen_8_dp"
-                    android:paddingEnd="@dimen/dimen_8_dp"
-                    android:text="@string/sample_my_location"
+                    android:lines="1"
+                    android:minHeight="?attr/actionBarSize"
+                    android:padding="8dp"
+                    android:text="123 Address"
                     android:textAllCaps="false"
+                    android:fontFamily="@font/rubik_medium"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/rich_black"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@id/address"
-                    app:layout_constraintStart_toEndOf="@id/btnMenu"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/address"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="@dimen/dimen_16_dp"
-                    android:layout_marginBottom="@dimen/dimen_8_dp"
-                    android:gravity="center_vertical|start"
-                    android:paddingStart="@dimen/dimen_8_dp"
-                    android:paddingEnd="@dimen/dimen_8_dp"
-                    android:text="@string/sample_address"
-                    android:textAllCaps="false"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                    android:textColor="@color/material_grey_900"
+                    app:backgroundTint="@color/sky_blue"
+                    app:cornerRadius="@dimen/dimen_28_dp"
+                    app:icon="@mipmap/ic_map_pin"
+                    app:iconSize="@dimen/dimen_18_dp"
+                    app:iconTint="@color/rich_black"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@id/my_location"
+                    app:layout_constraintEnd_toStartOf="@id/btnChevron"
                     app:layout_constraintStart_toEndOf="@id/btnMenu"
-                    app:layout_constraintTop_toBottomOf="@id/my_location" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/white" />
 
-                <ImageButton
-                    android:id="@+id/chevron"
-                    android:layout_width="@dimen/dimen_54_dp"
-                    android:layout_height="@dimen/dimen_54_dp"
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnChevron"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="@dimen/dimen_48_dp"
+                    android:layout_height="@dimen/dimen_48_dp"
+                    android:backgroundTint="@android:color/transparent"
                     android:contentDescription="@null"
                     android:rotation="270"
-                    android:background="?selectableItemBackgroundBorderless"
-                    android:src="@mipmap/baseline_arrow_back_ios_black_24"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:icon="@mipmap/baseline_arrow_back_ios_black_24"
+                    app:iconSize="@dimen/dimen_18_dp"
+                    app:iconTint="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/my_location"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintEnd_toStartOf="@id/btnSearch"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/white" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnSearch"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:layout_width="@dimen/dimen_54_dp"
                     android:layout_height="@dimen/dimen_54_dp"
-                    android:contentDescription="@null"
                     android:backgroundTint="@android:color/transparent"
-                    app:icon="@mipmap/baseline_search_black_24"
-                    app:iconSize="@dimen/dimen_28_dp"
-                    app:rippleColor="@color/white"
+                    android:contentDescription="@null"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    app:icon="@mipmap/ic_search"
+                    app:iconSize="@dimen/dimen_28_dp"
                     app:iconTint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="@color/white" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/gitHubBanner"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/dimen_16_dp"
-            android:layout_marginTop="@dimen/dimen_8_dp"
-            android:layout_marginEnd="@dimen/dimen_16_dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:orientation="vertical"
-            app:cardBackgroundColor="#f6f8fe"
-            app:cardCornerRadius="@dimen/dimen_12_dp"
-            app:cardElevation="@dimen/dimen_2_dp"
-            app:cardPreventCornerOverlap="false"
-            app:layout_constraintBottom_toTopOf="@id/listOffers"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/locationContainer">
+            android:layout_margin="@dimen/dimen_16_dp"
+            android:elevation="@dimen/dimen_8_dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/dimen_8_dp"
+            app:layout_scrollFlags="scroll">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/banner_bg"
+                android:padding="@dimen/dimen_16_dp">
 
                 <TextView
-                    android:id="@+id/sample_text"
+                    android:id="@+id/txt1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginEnd="@dimen/dimen_16_dp"
-                    android:drawableEnd="@drawable/emoji_fire"
-                    android:padding="@dimen/dimen_10_dp"
-                    android:text="@string/sample_github_banner"
-                    android:textAlignment="textStart"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:text="Star the repo for more!"
+                    android:textAllCaps="true"
                     android:textColor="@color/rich_black"
+                    android:textSize="16sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/banner"
-                    app:layout_constraintEnd_toStartOf="@id/banner"
+                    app:layout_constraintEnd_toStartOf="@id/card_image"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/banner" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="@dimen/dimen_0_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="@dimen/dimen_16_dp"
+                    android:text="@string/repo_description"
+                    android:textColor="@color/material_grey_700"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/rubik_medium"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/card_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt1" />
 
-                <ImageView
-                    android:id="@+id/banner"
-                    android:layout_width="@dimen/dimen_108_dp"
-                    android:layout_height="@dimen/dimen_108_dp"
-                    android:layout_margin="@dimen/dimen_16_dp"
-                    android:adjustViewBounds="true"
-                    android:contentDescription="@null"
-                    android:tint="@color/rich_black"
-                    android:src="@drawable/about_icon_github"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_image"
+                    android:layout_width="92dp"
+                    android:layout_height="92dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="@dimen/dimen_10_dp"
+                    app:cardElevation="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@null"
+                        android:src="@drawable/ic_heart" />
+
+                </androidx.cardview.widget.CardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </androidx.cardview.widget.CardView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listOffers"
-            android:layout_width="@dimen/dimen_0_dp"
-            android:layout_height="wrap_content"
-            android:focusableInTouchMode="true"
-            android:orientation="horizontal"
-            android:scrollbars="none"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@id/header_filters"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/gitHubBanner"
-            tools:itemCount="7"
-            tools:listitem="@layout/item_restaurant_offers" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
-            android:id="@+id/header_filters"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@color/white"
-            android:fontFamily="@font/"
-            android:padding="@dimen/dimen_16_dp"
-            android:text="@string/sample_filters"
-            android:textAlignment="textStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/rich_black"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/listOffers" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <HorizontalScrollView
-            android:id="@+id/containerMenus"
-            android:layout_width="@dimen/dimen_0_dp"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fillViewport="true"
-            android:overScrollMode="never"
-            android:scrollbars="none"
-            app:layout_constraintBottom_toTopOf="@id/header_restaurants_browse"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header_filters">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listPromotions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="true"
+                android:orientation="horizontal"
+                tools:itemCount="5"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/item_restaurant_offers" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/promotions"
-                    android:layout_width="@dimen/dimen_56_dp"
-                    android:layout_height="@dimen/dimen_56_dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:src="@mipmap/megaphone"
-                    android:tint="@color/white"
-                    app:backgroundTint="@color/material_green_500"
-                    app:layout_constraintEnd_toEndOf="@id/txtPromotions"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/containerFilter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                app:layout_constraintBottom_toTopOf="@id/listRestaurants"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/listPromotions"
+                app:layout_constraintVertical_bias="0.0">
 
                 <TextView
-                    android:id="@+id/txtPromotions"
-                    android:layout_width="0dp"
+                    android:id="@+id/txtFilter"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_8_dp"
-                    android:text="Promotions"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:padding="@dimen/dimen_12_dp"
+                    android:text="Filter By"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/rich_black"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@id/txtFavs"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/promotions" />
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/favs"
-                    android:layout_width="@dimen/dimen_56_dp"
-                    android:layout_height="@dimen/dimen_56_dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:src="@mipmap/star"
-                    android:tint="@color/white"
-                    app:backgroundTint="@color/sky_blue"
-                    app:layout_constraintEnd_toEndOf="@id/txtFavs"
-                    app:layout_constraintStart_toStartOf="@id/txtFavs"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/txtFavs"
-                    android:layout_width="0dp"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listFilters"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_8_dp"
-                    android:text="Favourites"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                    android:textColor="@color/rich_black"
-                    app:layout_constraintEnd_toStartOf="@id/txtFast"
-                    app:layout_constraintStart_toEndOf="@id/txtPromotions"
-                    app:layout_constraintTop_toBottomOf="@id/favs" />
-
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/fast"
-                    android:layout_width="@dimen/dimen_56_dp"
-                    android:layout_height="@dimen/dimen_56_dp"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:src="@mipmap/time"
-                    android:tint="@color/white"
-                    app:backgroundTint="@color/material_amber_500"
-                    app:layout_constraintEnd_toEndOf="@id/txtFast"
-                    app:layout_constraintStart_toStartOf="@id/txtFast"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txtFast"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_8_dp"
-                    android:text="Fastest"
-                    android:textAlignment="center"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                    android:textColor="@color/rich_black"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/txtFavs"
-                    app:layout_constraintTop_toBottomOf="@id/fast" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtFilter"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_filter" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/sampleBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_110_dp"
+                    android:layout_margin="@dimen/dimen_16_dp"
+                    android:elevation="@dimen/dimen_8_dp"
+                    app:cardCornerRadius="@dimen/dimen_8_dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/listFilters">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@null"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/ic_banner" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txtChooseRestaurant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:layout_marginTop="@dimen/dimen_16_dp"
+                    android:padding="@dimen/dimen_12_dp"
+                    android:text="Choose from SA's favourites"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/rich_black"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sampleBanner" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listChooseRestaurants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_16_dp"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtChooseRestaurant"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/item_choose_restaurant" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </HorizontalScrollView>
 
-        <TextView
-            android:id="@+id/header_restaurants_browse"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:padding="@dimen/dimen_10_dp"
-            android:text="@string/sample_restaurants_browse"
-            android:textAlignment="textStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/rich_black"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/listRestaurantsBrowse"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/containerMenus" />
+            <TextView
+                android:id="@+id/txtBrowseRestaurants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:padding="@dimen/dimen_12_dp"
+                android:text="What are you feeling like?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/rich_black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/containerFilter" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listRestaurantsBrowse"
-            android:layout_width="@dimen/dimen_0_dp"
-            android:layout_height="wrap_content"
-            android:focusableInTouchMode="true"
-            android:orientation="horizontal"
-            android:scrollbars="none"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@id/header_restaurants"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header_restaurants_browse"
-            tools:itemCount="7"
-            tools:listitem="@layout/item_resturant_browse" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listBrowseRestaurants"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="true"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtBrowseRestaurants"
+                tools:listitem="@layout/item_resturant_browse" />
 
-        <TextView
-            android:id="@+id/header_restaurants"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:padding="@dimen/dimen_10_dp"
-            android:text="@string/sample_restaurants_nearby"
-            android:textAlignment="textStart"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@color/rich_black"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/listRestaurantsBrowse" />
+            <TextView
+                android:id="@+id/txtNumberRestaurants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:lines="1"
+                android:padding="@dimen/dimen_12_dp"
+                android:text="7 restaurants near you"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/rich_black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/listRestaurants"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/listBrowseRestaurants" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listRestaurants"
-            android:layout_width="@dimen/dimen_0_dp"
-            android:layout_height="wrap_content"
-            android:focusableInTouchMode="true"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/header_restaurants"
-            tools:itemCount="7"
-            tools:listitem="@layout/item_resturants" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listRestaurants"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                android:fitsSystemWindows="true"
+                android:nestedScrollingEnabled="true"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtNumberRestaurants"
+                tools:listitem="@layout/item_resturants" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
