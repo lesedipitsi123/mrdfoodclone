@@ -6,10 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import apps.studios.bt.mrdfoodclone.adapters.*
-import apps.studios.bt.mrdfoodclone.models.BrowseRestaurant
-import apps.studios.bt.mrdfoodclone.models.Filter
-import apps.studios.bt.mrdfoodclone.models.Promotion
-import apps.studios.bt.mrdfoodclone.models.Restaurant
+import apps.studios.bt.mrdfoodclone.models.*
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -97,9 +94,10 @@ class HomeActivity : AppCompatActivity() {
 
     private fun demoRestaurants() = mutableListOf(
         Restaurant(getString(R.string.sample_restaurant1), cover_img = R.drawable.demo_food_img),
-        Restaurant(getString(R.string.sample_restaurant2), cover_img = R.drawable.demo_food_img2),
-        Restaurant(getString(R.string.sample_restaurant3), cover_img = R.drawable.demo_food_img3),
-        Restaurant(getString(R.string.sample_restaurant4), cover_img = R.mipmap.demo_img)
+        Restaurant(getString(R.string.sample_restaurant4), cover_img = R.drawable.demo_food_img2,
+            viewType = ViewType.STACK
+        ),
+        Restaurant(getString(R.string.sample_restaurant3), cover_img = R.drawable.demo_food_img3)
     )
 
 }

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import apps.studios.bt.mrdfoodclone.R
 import apps.studios.bt.mrdfoodclone.models.Restaurant
+import apps.studios.bt.mrdfoodclone.models.ViewType
 import kotlinx.android.synthetic.main.item_resturants.view.*
 
 class AdapterRestaurant(val context: Context, val restaurants: List<Restaurant>) :
@@ -21,9 +22,24 @@ class AdapterRestaurant(val context: Context, val restaurants: List<Restaurant>)
         val cover = itemView.cover_img
     }
 
+    override fun getItemViewType(position: Int): Int {
+        return restaurants[position].viewType.type
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_resturants, parent, false)
-        return MyViewHolder(view)
+        val view1 = LayoutInflater.from(context).inflate(R.layout.item_resturants, parent, false)
+        val view2 =
+            LayoutInflater.from(context).inflate(R.layout.item_restaurant_stack, parent, false)
+
+        return when (viewType) {
+            ViewType.NORMAL.type -> {
+                MyViewHolder(view1)
+            }
+            ViewType.STACK.type -> {
+                MyViewHolder(view2)
+            }
+            else -> MyViewHolder(view1)
+        }
     }
 
     override fun getItemCount() = restaurants.size

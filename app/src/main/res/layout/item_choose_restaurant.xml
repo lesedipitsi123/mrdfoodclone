@@ -18,11 +18,12 @@
         android:id="@+id/txtRestaurant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:ellipsize="end"
         android:lines="1"
-        android:layout_marginTop="16dp"
         android:text="KFC"
+        android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textColor="@color/rich_black"/>
+        android:textColor="@color/rich_black" />
 
 </LinearLayout>

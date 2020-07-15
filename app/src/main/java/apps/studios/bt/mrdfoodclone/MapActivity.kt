@@ -86,11 +86,9 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, MapWrapper.OnDragLi
         }
     }
 
-    fun saveLocation(v: View)
-    {
+    fun saveLocation(v: View) {
         val intent = Intent(this, HomeActivity::class.java)
-        if(locationTextView.text.trim().isNotEmpty())
-        {
+        if (locationTextView.text.trim().isNotEmpty()) {
             intent.putExtra("Address", locationTextView.text.trim().toString())
         }
         startActivity(intent)
@@ -178,7 +176,6 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, MapWrapper.OnDragLi
                             obj.getAddressLine(0).split(',')[0]
                         )
                             .append(", ").append(obj.countryName)
-
                     }
                     return completerAddress.toString()
 
@@ -191,8 +188,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback, MapWrapper.OnDragLi
 
                 if (completeAddress == null) {
                     Toast.makeText(activity, R.string.google_maps_error, Toast.LENGTH_LONG).show()
-                    activity.locationTextView.text = activity.getString(R.string.sample_location)
-
+                    //activity.locationTextView.text = activity.getString(R.string.sample_location)
                     return
                 }
                 activity.locationTextView.text = completeAddress

@@ -130,5 +130,6 @@
     <string name="sample_restaurant_category2">Pizza</string>
     <string name="sample_restaurant_category3">Sandwiches</string>
     <string name="sample_restaurant_category4">Salads</string>
+    <string name="special">Special</string>
 
 </resources>

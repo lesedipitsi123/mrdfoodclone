@@ -18,11 +18,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".SignUpActivity" />
         <activity
             android:name=".LoginActivity"
             android:windowSoftInputMode="adjustPan" />
-
         <activity android:name=".HomeActivity" />
 
         <meta-data
@@ -31,11 +38,7 @@
 
         <activity android:name=".MapActivity" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

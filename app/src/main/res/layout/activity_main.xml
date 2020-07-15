@@ -34,6 +34,7 @@
         android:id="@+id/mrdCloneIcon"
         android:layout_width="@dimen/dimen_108_dp"
         android:layout_height="@dimen/dimen_108_dp"
+        android:contentDescription="@null"
         android:layout_marginTop="16dp"
         android:src="@drawable/clone_logo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,6 +130,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/deliver"
         app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="@color/material_blue_100"
         app:strokeColor="@color/rich_black"
         app:strokeWidth="@dimen/dimen_2_dp" />
 
