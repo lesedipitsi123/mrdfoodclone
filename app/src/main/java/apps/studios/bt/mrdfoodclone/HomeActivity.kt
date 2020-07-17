@@ -2,16 +2,27 @@ package apps.studios.bt.mrdfoodclone
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
+import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import apps.studios.bt.mrdfoodclone.adapters.*
+import apps.studios.bt.mrdfoodclone.interfaces.RestaurantClickListener
 import apps.studios.bt.mrdfoodclone.models.*
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity : AppCompatActivity() {
+
+class HomeActivity : AppCompatActivity(), RestaurantClickListener {
 
     companion object {
+        public const val EXTRA_RESTAURANT_COVER_TRANSITION_NAME = "RestaurantCover"
+        public const val EXTRA_RESTAURANT_ITEM = "RestaurantItem"
+        public const val EXTRA_RESTAURANT_NAME_TRANSITION_NAME = "RestaurantName"
     }
 
     private var addressString: String? = null
@@ -48,7 +59,7 @@ class HomeActivity : AppCompatActivity() {
         }
         listRestaurants.apply {
             layoutManager = LinearLayoutManager(this@HomeActivity, RecyclerView.VERTICAL, false)
-            adapter = AdapterRestaurant(this@HomeActivity, demoRestaurants())
+            adapter = AdapterRestaurant(this@HomeActivity, demoRestaurants(), this@HomeActivity)
             hasFixedSize()
         }
         txtNumberRestaurants.text = "${demoRestaurants().size} restaurants near you"
@@ -94,10 +105,38 @@ class HomeActivity : AppCompatActivity() {
 
     private fun demoRestaurants() = mutableListOf(
         Restaurant(getString(R.string.sample_restaurant1), cover_img = R.drawable.demo_food_img),
-        Restaurant(getString(R.string.sample_restaurant4), cover_img = R.drawable.demo_food_img2,
+        Restaurant(
+            getString(R.string.sample_restaurant4), cover_img = R.drawable.demo_food_img2,
             viewType = ViewType.STACK
         ),
         Restaurant(getString(R.string.sample_restaurant3), cover_img = R.drawable.demo_food_img3)
     )
+
+    override fun onRestaurantClick(
+        pos: Int,
+        item: Restaurant,
+        sharedImageView: ImageView,
+        sharedTextView: TextView
+    ) {
+        val intent = Intent(this, RestaurantActivity::class.java)
+        intent.putExtra(EXTRA_RESTAURANT_ITEM, item)
+        intent.putExtra(
+            EXTRA_RESTAURANT_COVER_TRANSITION_NAME,
+            ViewCompat.getTransitionName(sharedImageView)
+        )
+        intent.putExtra(
+            EXTRA_RESTAURANT_NAME_TRANSITION_NAME,
+            ViewCompat.getTransitionName(sharedTextView)
+        )
+
+        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+            this,
+            Pair<View, String>(sharedImageView, ViewCompat.getTransitionName(sharedImageView)),
+            Pair<View, String>(sharedTextView, ViewCompat.getTransitionName(sharedTextView))
+        )
+
+
+        startActivity(intent, options.toBundle())
+    }
 
 }

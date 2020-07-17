@@ -131,5 +131,7 @@
     <string name="sample_restaurant_category3">Sandwiches</string>
     <string name="sample_restaurant_category4">Salads</string>
     <string name="special">Special</string>
+    <string name="menu1">Onion Rings</string>
+    <string name="sample_menu_price">R249,90</string>
 
 </resources>

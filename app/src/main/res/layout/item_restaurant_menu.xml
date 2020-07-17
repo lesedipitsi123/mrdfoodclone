@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?listPreferredItemHeight"
+    android:paddingEnd="@dimen/dimen_16_dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:paddingStart="@dimen/dimen_16_dp"
+    android:background="?selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/icMenu"
+        android:layout_width="@dimen/dimen_24_dp"
+        android:layout_height="@dimen/dimen_24_dp"
+        android:src="@mipmap/ic_menu"
+        android:tint="@color/material_blue_grey_900"
+        app:layout_constraintBottom_toBottomOf="@id/txtMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtMenu" />
+
+    <TextView
+        android:id="@+id/txtMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_16_dp"
+        android:text="@string/menu1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/rich_black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/icMenu"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/material_grey_200"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

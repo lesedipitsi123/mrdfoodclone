@@ -63,6 +63,7 @@
         android:gravity="center"
         android:lines="1"
         android:padding="@dimen/dimen_12_dp"
+        android:textColorHint="@color/white"
         android:hint="@string/map_tooltip"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:textColor="@color/white"

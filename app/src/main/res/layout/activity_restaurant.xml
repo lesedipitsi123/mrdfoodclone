@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_blue_grey_50"
+    android:fitsSystemWindows="true"
+    tools:context=".RestaurantActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/dimen_4_dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleTextAppearance="@style/TextAppearance.Title"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="Menu"
+            app:titleEnabled="true">
+
+            <ImageView
+                android:id="@+id/cover_img"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:minHeight="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/demo_food_img3"
+                app:layout_collapseMode="parallax" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:background="@drawable/gradient_header_background"
+                android:rotation="180" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/detailsHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:paddingTop="@dimen/dimen_16_dp"
+                android:paddingBottom="@dimen/dimen_16_dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/restaurant_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/rubik_medium"
+                    android:maxLines="2"
+                    android:text="@string/sample_restaurants"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toTopOf="@id/restaurant_tags"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/avatar"
+                    app:layout_constraintTop_toTopOf="@id/avatar"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/restaurant_tags"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@string/sample_restaurants_tags"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="@color/material_grey_50"
+                    app:layout_constraintBottom_toBottomOf="@id/avatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/avatar"
+                    app:layout_constraintTop_toBottomOf="@id/restaurant_name"
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="@dimen/dimen_42_dp"
+                    android:layout_height="@dimen/dimen_42_dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/default_restaurant_logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/icRating"
+                    android:layout_width="@dimen/dimen_16_dp"
+                    android:layout_height="@dimen/dimen_16_dp"
+                    android:layout_margin="@dimen/dimen_16_dp"
+                    android:contentDescription="@null"
+                    android:src="@mipmap/ic_star"
+                    android:tint="@color/material_grey_50"
+                    app:layout_constraintBottom_toBottomOf="@id/restaurant_rating"
+                    app:layout_constraintStart_toEndOf="@id/avatar"
+                    app:layout_constraintTop_toTopOf="@id/restaurant_rating" />
+
+                <TextView
+                    android:id="@+id/restaurant_rating"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:text="@string/sample_restaurants_rating"
+                    android:textAlignment="textStart"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="@color/material_grey_50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/icRating"
+                    app:layout_constraintTop_toBottomOf="@id/restaurant_tags" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/highlightsHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen_10_dp"
+                android:layout_marginTop="32dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/detailsHolder">
+
+                <TextView
+                    android:id="@+id/txtMenuHighlights"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:padding="@dimen/dimen_12_dp"
+                    android:text="Menu Highlights:"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listMenuHighlights"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="true"
+                    android:orientation="horizontal"
+                    android:scrollbars="none"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtMenuHighlights"
+                    tools:listitem="@layout/item_menu_highlights" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listMenus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:background="@color/white"
+                android:nestedScrollingEnabled="true"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/highlightsHolder"
+                tools:itemCount="10"
+                tools:listitem="@layout/item_restaurant_menu" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
